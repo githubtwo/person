@@ -7,6 +7,9 @@
           <element id="module-output" name="Personal" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.3.1" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.36" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:7.0.64" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.0.RELEASE" />
