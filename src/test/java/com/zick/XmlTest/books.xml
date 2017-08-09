@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bookstore>
+    <book id="1">
+        <name>冰与火之歌</name>
+        <author>乔治马丁</author>
+        <year>2014</year>
+        <price>80</price>
+    </book>
+
+    <book id="2">
+        <name>安徒生童话</name>
+        <author>123</author>
+        <year>2020</year>
+        <language>80</language>
+    </book>
+
+</bookstore>
