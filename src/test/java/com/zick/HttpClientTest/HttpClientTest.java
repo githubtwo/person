@@ -45,7 +45,7 @@ public class HttpClientTest {
      */
     public void get() {
         // TODO Auto-generated method stub
-        String url="http://localhost:8089/user/login?username=zick&password=123456";
+        String url="http://maoyan.com/";
 
 
         //1.使用默认的配置的httpclient
