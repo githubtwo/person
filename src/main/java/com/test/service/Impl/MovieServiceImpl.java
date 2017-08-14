@@ -10,6 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  */
 @Service("iMovieService")
 public class MovieServiceImpl implements IMovieService {
+
 
     public ServerResponse getMaoYanMovie() throws IOException {
         List<MovieInfo> movieInfoList = Lists.newArrayList();
@@ -32,7 +34,7 @@ public class MovieServiceImpl implements IMovieService {
             for (Element elementInfo : movie) {
                 MovieInfo movieInfo = new MovieInfo();
                 Elements elements1 = elementInfo.getElementsByTag("a"); //a href
-                movieInfo.setImgDetail(elementInfo.getElementsByTag("a").attr("href").toString());
+                movieInfo.setImgdetail(elementInfo.getElementsByTag("a").attr("href").toString());
                 // System.out.println(elementInfo.getElementsByTag("a").attr("href").toString());
                 Elements elements2 = elementInfo.getElementsByClass("movie-poster");
                 // System.out.println(elementInfo.getElementsByClass("movie-title movie-title-padding").text());//获取html内容
@@ -56,7 +58,7 @@ public class MovieServiceImpl implements IMovieService {
                     Elements elements3 = elementInfo.getElementsByClass("movie-ver");//获取电影类型 2d /3d
                     for (Element element1 : elements3) {
                         // System.out.println(element1.getElementsByTag("i").attr("class"));
-                        movieInfo.setMovie_var(element1.getElementsByTag("i").attr("class"));
+                        movieInfo.setMovieVar(element1.getElementsByTag("i").attr("class"));
                     }
                 }
                 movieInfoList.add(movieInfo);

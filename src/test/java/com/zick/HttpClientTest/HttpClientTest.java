@@ -18,6 +18,10 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.CharsetUtils;
 import org.apache.http.util.EntityUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.junit.Test;
 
 import javax.net.ssl.SSLContext;
@@ -35,6 +39,23 @@ import java.util.List;
  * Created by Administrator on 2017/8/9.
  */
 public class HttpClientTest {
+
+    @Test
+    public void getMovieDetail() throws IOException {
+        Document doc = Jsoup.connect("http://maoyan.com/films/344264").get();
+        String title = doc.title();
+        String type = doc.getElementsByClass("ename ellipsis").text();
+       // System.out.println(type);
+
+       /* Elements elements = doc.select("li.ellipsis");
+        System.out.println(elements.toString());*/
+
+        /*Elements elements = doc.select("span.stonefont");
+        System.out.println(elements.toString());*/
+
+        String elements = doc.select("span.dra").text();
+        System.out.println(elements.toString());
+    }
 
     @Test
     public void jUnitTest() {

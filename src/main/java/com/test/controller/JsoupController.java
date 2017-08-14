@@ -25,12 +25,12 @@ public class JsoupController {
         Elements elements = doc.getElementsByClass("movie-list");//热映列表
         for(Element element : elements){
             Elements movie = element.getElementsByClass("movie-item");//单部电影信息
-          //  System.out.println(movie.toString());
+           // System.out.println(movie.toString());
 
             for(Element elementInfo:movie){
                 MovieInfo movieInfo = new MovieInfo();
                 Elements elements1 = elementInfo.getElementsByTag("a"); //a href
-                movieInfo.setImgDetail(elementInfo.getElementsByTag("a").attr("href").toString());
+                movieInfo.setImgdetail(elementInfo.getElementsByTag("a").attr("href").toString());
                // System.out.println(elementInfo.getElementsByTag("a").attr("href").toString());
                 Elements elements2 = elementInfo.getElementsByClass("movie-poster");
                // System.out.println(elementInfo.getElementsByClass("movie-title movie-title-padding").text());//获取html内容
@@ -50,15 +50,15 @@ public class JsoupController {
 
                 //System.out.println(elementInfo.getElementsByClass("movie-ver").html());
                 if(elementInfo.getElementsByClass("movie-ver").html().length() >0){
-
                     Elements elements3 = elementInfo.getElementsByClass("movie-ver");//获取电影类型 2d /3d
                     for(Element element1 : elements3){
                        // System.out.println(element1.getElementsByTag("i").attr("class"));
-                         movieInfo.setMovie_var(element1.getElementsByTag("i").attr("class"));
+                         movieInfo.setMovieVar(element1.getElementsByTag("i").attr("class"));
+
                     }
                 }
                 movieInfoList.add(movieInfo);
-                System.out.println(movieInfo.toString());
+              //  System.out.println(movieInfo.toString());
             }
             if(movieInfoList.size()==8){
                 break;
