@@ -52,4 +52,12 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccess("登录成功",user);
     }
 
+    public ServerResponse<User> getUserInfo(Integer userId){
+        if(userId!=null){
+            User user = userMapper.selectByPrimaryKey(userId);
+            return ServerResponse.createBySuccess(user);
+        }
+        return null;
+    }
+
 }

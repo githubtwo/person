@@ -10,4 +10,6 @@ public interface IUserService {
     ServerResponse register(User user);
 
     ServerResponse<User> login(String username,String password);
+
+    ServerResponse<User> getUserInfo(Integer userId);
 }

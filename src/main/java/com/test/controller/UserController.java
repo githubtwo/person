@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -29,7 +30,8 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("login")
-    public ServerResponse<User> login(HttpSession session, String username,String password){
+    public ServerResponse<User> login(HttpServletRequest request, HttpSession session, String username, String password){
+        session.setMaxInactiveInterval(2880);
         ServerResponse<User> response = iUserService.login(username,password);
         if(response.isSuccess()){
             session.setAttribute(Const.CURRENT_USER,response.getData());
@@ -49,7 +51,8 @@ public class UserController {
     public ServerResponse getUserInfo(HttpSession session){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if(user != null){
-            return ServerResponse.createBySuccess(user);
+
+            return iUserService.getUserInfo(user.getId());
         }
         return ServerResponse.createByErrorMessage("用户未登录，无法获取当前用户的信息");
     }

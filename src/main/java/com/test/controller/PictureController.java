@@ -31,13 +31,14 @@ public class PictureController {
 
     @RequestMapping(value = "uploadPicture")
     public ServerResponse upload(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request) {
-
+        String url = request.getSession().getServletContext().getRealPath("/") ;
+        String uploadUrl = url.substring(0,url.length()-5) + "upload/";
         String path = "D:/File/IdeaProjects/Personal/target/upload";
         System.out.println(path);
         String fileName = file.getOriginalFilename();
 //        String fileName = new Date().getTime()+".jpg";
         System.out.println(path);
-        File targetFile = new File(path, fileName);
+        File targetFile = new File(uploadUrl, fileName);
         if(!targetFile.exists()){
             targetFile.mkdirs();
         }
@@ -71,12 +72,14 @@ public class PictureController {
 
 
     @RequestMapping("/image")
-    public Integer image(HttpServletResponse response, HttpSession session, String img) {
+    public Integer image(HttpServletRequest request,HttpServletResponse response, HttpSession session, String img) {
 
         String path = "D:/File/IdeaProjects/Personal/target/upload";
-
+        String url = session.getServletContext().getRealPath("/") ;
+        String uploadUrl = url.substring(0,url.length()-5) + "upload/";
+        System.out.println("uploadUrl      "+uploadUrl);
         try {
-            FileInputStream fis = new FileInputStream(path + "/" + img);
+            FileInputStream fis = new FileInputStream(uploadUrl + "/" + img);
             OutputStream os = response.getOutputStream();
             byte[] buffer = new byte[1024 * 8];
             int count;
