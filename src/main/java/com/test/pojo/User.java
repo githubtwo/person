@@ -6,7 +6,7 @@ import java.util.Date;
 
 @JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 public class User {
-    private Integer id;
+    private String id;
 
     private String username;
 
@@ -20,7 +20,7 @@ public class User {
 
     private String img;
 
-    public User(Integer id, String username, String password, String phone, Date createTime, Date updateTime, String img) {
+    public User(String id, String username, String password, String phone, Date createTime, Date updateTime, String img) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -34,11 +34,11 @@ public class User {
         super();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

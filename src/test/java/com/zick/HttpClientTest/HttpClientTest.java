@@ -26,20 +26,33 @@ import org.junit.Test;
 
 import javax.net.ssl.SSLContext;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/8/9.
  */
 public class HttpClientTest {
 
+    @Test
+    public void gete(){
+        String str="a,c,dfd,gggtg,dw,e";
+        String[] sr=str.split(",");
+        System.out.println(sr[2]);
+        String s1 = "a";
+
+        String s2 = s1 + "b";
+        String s3 = "a" + "b";
+        System.out.println(s2 == "ab");
+        System.out.println(s3 == "ab");
+
+    }
     @Test
     public void getMovieDetail() throws IOException {
         Document doc = Jsoup.connect("http://maoyan.com/films/344264").get();
@@ -51,6 +64,9 @@ public class HttpClientTest {
         System.out.println(elements.toString());*/
 
         /*Elements elements = doc.select("span.stonefont");
+        System.out.println(elements.toString());*/
+
+       /* String elements = doc.select("span.dra").text();
         System.out.println(elements.toString());*/
 
         String elements = doc.select("span.dra").text();

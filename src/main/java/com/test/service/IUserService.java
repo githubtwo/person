@@ -11,5 +11,5 @@ public interface IUserService {
 
     ServerResponse<User> login(String username,String password);
 
-    ServerResponse<User> getUserInfo(Integer userId);
+    ServerResponse<User> getUserInfo(String userId);
 }

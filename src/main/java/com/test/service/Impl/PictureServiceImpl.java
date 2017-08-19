@@ -19,7 +19,7 @@ public class PictureServiceImpl implements IPictureService {
 
 
 
-    public ServerResponse<String> updateUserImg(Integer userId,String filename, String username){
+    public ServerResponse<String> updateUserImg(String userId,String filename, String username){
         if(StringUtil.isNotEmpty(filename) && StringUtil.isNotEmpty(username)){
             int updateResult = userMapper.updateUserImg(filename,username);
             if(updateResult > 0){

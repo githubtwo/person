@@ -34,10 +34,8 @@ public class PictureController {
         String url = request.getSession().getServletContext().getRealPath("/") ;
         String uploadUrl = url.substring(0,url.length()-5) + "upload/";
         String path = "D:/File/IdeaProjects/Personal/target/upload";
-        System.out.println(path);
         String fileName = file.getOriginalFilename();
 //        String fileName = new Date().getTime()+".jpg";
-        System.out.println(path);
         File targetFile = new File(uploadUrl, fileName);
         if(!targetFile.exists()){
             targetFile.mkdirs();

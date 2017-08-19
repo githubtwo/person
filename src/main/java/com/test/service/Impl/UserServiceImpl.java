@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2017/8/2.
@@ -20,17 +21,18 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private UserMapper userMapper;
 
-    public ServerResponse register(User user){
+    public ServerResponse<String> register(User user){
         if(StringUtil.isNotEmpty(user.getUsername())){
             int resulCount = userMapper.checkUsername(user.getUsername());
             if(resulCount > 0){
                 return ServerResponse.createByErrorMessage("该用户已存在");
             }
             user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
-
+            String uuid= UUID.randomUUID().toString();
+            user.setId(uuid);
             int rowCount = userMapper.insert(user);
             if(rowCount > 0){
-                return ServerResponse.createBySuccess("注册成功");
+                return ServerResponse.createBySuccessMessage("注册成功");
             }
             return ServerResponse.createByErrorMessage("注册失败");
         }
@@ -52,7 +54,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccess("登录成功",user);
     }
 
-    public ServerResponse<User> getUserInfo(Integer userId){
+    public ServerResponse<User> getUserInfo(String userId){
         if(userId!=null){
             User user = userMapper.selectByPrimaryKey(userId);
             return ServerResponse.createBySuccess(user);

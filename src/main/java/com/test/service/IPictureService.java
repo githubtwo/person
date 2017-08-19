@@ -9,5 +9,5 @@ import com.test.pojo.User;
 
 public interface IPictureService {
 
-    ServerResponse<String> updateUserImg(Integer userId, String filename, String username);
+    ServerResponse<String> updateUserImg(String userId, String filename, String username);
 }
