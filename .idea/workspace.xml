@@ -7,43 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="368e3cc8-074e-4114-969a-c14e3ca10585" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/JsoupController.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/PictureController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/PictureController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/test/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/dao/UserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/test/dao/UserMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/pojo/User.class" afterPath="$PROJECT_DIR$/target/classes/com/test/pojo/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/IPictureService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/IPictureService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/IUserService.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/IUserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/Impl/PictureServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/Impl/PictureServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/service/Impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/test/service/Impl/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall.war" afterPath="$PROJECT_DIR$/target/mmall.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/controller/PictureController.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/controller/PictureController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/controller/UserController.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/dao/UserMapper.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/dao/UserMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/pojo/User.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/pojo/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/IPictureService.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/IPictureService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/IUserService.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/IUserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/Impl/PictureServiceImpl.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/Impl/PictureServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/Impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/com/test/service/Impl/UserServiceImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/alipay-sdk-java20170725114550-source.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/alipay-sdk-java20170725114550.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/commons-logging-1.1.1-sources.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/commons-logging-1.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/CardController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/OrderController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/PurchaseMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/RechargeMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/WaterCardMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/pojo/Purchase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/pojo/Recharge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/pojo/WaterCard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/ICardService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/IOrderService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/CardServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/OrderServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PurchaseMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/RechargeMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/WaterCardMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Personal.iml" afterPath="$PROJECT_DIR$/Personal.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/common/Const.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/common/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/PictureController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/PictureController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/dao/UserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/pojo/MovieDetail.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/pojo/MovieDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/pojo/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/pojo/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/IPictureService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/IPictureService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/PictureServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/PictureServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/service/Impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/zick/HttpClientTest/HttpClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/zick/HttpClientTest/HttpClientTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/target/mmall/WEB-INF/classes/mappers/UserMapper.xml" />
     </list>
     <ignored path="Personal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,8 +101,8 @@
       <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6918239">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42295596">
+              <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1498,7 +1481,7 @@
       <workItem from="1502848960422" duration="12544000" />
       <workItem from="1502932123491" duration="17509000" />
       <workItem from="1503016200946" duration="21585000" />
-      <workItem from="1503105659005" duration="10351000" />
+      <workItem from="1503105659005" duration="10388000" />
     </task>
     <task id="LOCAL-00001" summary="add all change">
       <created>1502240192694</created>
@@ -1530,7 +1513,13 @@
       <option name="project" value="LOCAL" />
       <updated>1502864149534</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add new file">
+      <created>1503121581816</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1503121581816</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1566,7 +1555,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224566000" />
+    <option name="totallyTimeSpent" value="224603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1583,6 +1572,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
@@ -1592,7 +1582,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1604,7 +1594,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2080,8 +2069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6918239">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.42295596">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

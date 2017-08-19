@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.WaterCardMapper" >
+  <resultMap id="BaseResultMap" type="com.test.pojo.WaterCard" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="type" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="balance" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="def" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="watermeter_code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ctime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="user_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, password, type, status, balance, remark, phone, def, watermeter_code, ctime, 
+    user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_water_card
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_water_card
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.test.pojo.WaterCard" >
+    insert into tb_water_card (id, code, password, 
+      type, status, balance, 
+      remark, phone, def, 
+      watermeter_code, ctime, user_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{balance,jdbcType=REAL}, 
+      #{remark,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{def,jdbcType=INTEGER}, 
+      #{watermeterCode,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{userId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.pojo.WaterCard" >
+    insert into tb_water_card
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="balance != null" >
+        balance,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="def != null" >
+        def,
+      </if>
+      <if test="watermeterCode != null" >
+        watermeter_code,
+      </if>
+      <if test="ctime != null" >
+        ctime,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=REAL},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="def != null" >
+        #{def,jdbcType=INTEGER},
+      </if>
+      <if test="watermeterCode != null" >
+        #{watermeterCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null" >
+        #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.pojo.WaterCard" >
+    update tb_water_card
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=REAL},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="def != null" >
+        def = #{def,jdbcType=INTEGER},
+      </if>
+      <if test="watermeterCode != null" >
+        watermeter_code = #{watermeterCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null" >
+        ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.pojo.WaterCard" >
+    update tb_water_card
+    set code = #{code,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      balance = #{balance,jdbcType=REAL},
+      remark = #{remark,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      def = #{def,jdbcType=INTEGER},
+      watermeter_code = #{watermeterCode,jdbcType=VARCHAR},
+      ctime = #{ctime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByCodePassowrd" parameterType="map" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/> FROM tb_water_card
+    WHERE code=#{code} and password = #{password}
+  </select>
+
+  <select id="selectByUserId" parameterType="string" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/>  FROM tb_water_card
+    WHERE user_id=#{userId}
+  </select>
+
+  <select id="selectByCode" parameterType="string" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/> FROM tb_water_card
+    WHERE code=#{code}
+  </select>
+
+  <select id="selectByCard" parameterType="string" resultType="int">
+    SELECT <include refid="Base_Column_List"/> FROM tb_water_card
+    WHERE code=#{code}
+  </select>
+</mapper>

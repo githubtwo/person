@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.PurchaseMapper" >
+  <resultMap id="BaseResultMap" type="com.test.pojo.Purchase" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="price" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="total_price" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="water_consumption" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="total_consumption" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="unit_cost" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="balance" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="place" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ctime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="card_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="collector_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="order_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, price, total_price, water_consumption, total_consumption, unit_cost, 
+    balance, name, place, ctime, card_no, collector_id, order_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user_purchase
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_user_purchase
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.test.pojo.Purchase" >
+    insert into tb_user_purchase (id, user_id, price, 
+      total_price, water_consumption, total_consumption, 
+      unit_cost, balance, name, 
+      place, ctime, card_no, 
+      collector_id, order_id)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, 
+      #{totalPrice,jdbcType=REAL}, #{waterConsumption,jdbcType=REAL}, #{totalConsumption,jdbcType=REAL}, 
+      #{unitCost,jdbcType=REAL}, #{balance,jdbcType=REAL}, #{name,jdbcType=VARCHAR}, 
+      #{place,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{cardNo,jdbcType=VARCHAR}, 
+      #{collectorId,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.pojo.Purchase" >
+    insert into tb_user_purchase
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="totalPrice != null" >
+        total_price,
+      </if>
+      <if test="waterConsumption != null" >
+        water_consumption,
+      </if>
+      <if test="totalConsumption != null" >
+        total_consumption,
+      </if>
+      <if test="unitCost != null" >
+        unit_cost,
+      </if>
+      <if test="balance != null" >
+        balance,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="place != null" >
+        place,
+      </if>
+      <if test="ctime != null" >
+        ctime,
+      </if>
+      <if test="cardNo != null" >
+        card_no,
+      </if>
+      <if test="collectorId != null" >
+        collector_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="totalPrice != null" >
+        #{totalPrice,jdbcType=REAL},
+      </if>
+      <if test="waterConsumption != null" >
+        #{waterConsumption,jdbcType=REAL},
+      </if>
+      <if test="totalConsumption != null" >
+        #{totalConsumption,jdbcType=REAL},
+      </if>
+      <if test="unitCost != null" >
+        #{unitCost,jdbcType=REAL},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=REAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="place != null" >
+        #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null" >
+        #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cardNo != null" >
+        #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="collectorId != null" >
+        #{collectorId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.pojo.Purchase" >
+    update tb_user_purchase
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="totalPrice != null" >
+        total_price = #{totalPrice,jdbcType=REAL},
+      </if>
+      <if test="waterConsumption != null" >
+        water_consumption = #{waterConsumption,jdbcType=REAL},
+      </if>
+      <if test="totalConsumption != null" >
+        total_consumption = #{totalConsumption,jdbcType=REAL},
+      </if>
+      <if test="unitCost != null" >
+        unit_cost = #{unitCost,jdbcType=REAL},
+      </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=REAL},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="place != null" >
+        place = #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="ctime != null" >
+        ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cardNo != null" >
+        card_no = #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="collectorId != null" >
+        collector_id = #{collectorId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.pojo.Purchase" >
+    update tb_user_purchase
+    set user_id = #{userId,jdbcType=VARCHAR},
+      price = #{price,jdbcType=REAL},
+      total_price = #{totalPrice,jdbcType=REAL},
+      water_consumption = #{waterConsumption,jdbcType=REAL},
+      total_consumption = #{totalConsumption,jdbcType=REAL},
+      unit_cost = #{unitCost,jdbcType=REAL},
+      balance = #{balance,jdbcType=REAL},
+      name = #{name,jdbcType=VARCHAR},
+      place = #{place,jdbcType=VARCHAR},
+      ctime = #{ctime,jdbcType=TIMESTAMP},
+      card_no = #{cardNo,jdbcType=VARCHAR},
+      collector_id = #{collectorId,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
