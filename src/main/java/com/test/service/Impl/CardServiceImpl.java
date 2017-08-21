@@ -65,6 +65,13 @@ public class CardServiceImpl implements ICardService {
             return true;
         }
         return false;
+    }
 
+    public ServerResponse getAllCard(String userId){
+        List<WaterCard> list = waterCardMapper.selectByUserId(userId);
+        if(CollectionUtils.isNotEmpty(list)){
+            return ServerResponse.createBySuccess(list);
+        }
+        return ServerResponse.createByErrorMessage("当前用户无该卡号");
     }
 }

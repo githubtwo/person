@@ -7,19 +7,35 @@ import com.alipay.api.domain.AlipayTradeAppPayModel;
 import com.alipay.api.request.AlipayTradeAppPayRequest;
 import com.alipay.api.response.AlipayTradeAppPayResponse;
 import com.test.common.ServerResponse;
+import com.test.dao.RechargeMapper;
+import com.test.dao.WaterCardMapper;
+import com.test.pojo.Recharge;
+import com.test.pojo.User;
+import com.test.pojo.WaterCard;
 import com.test.service.IOrderService;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2017/8/17.
  */
 @Service("iOrderService")
 public class OrderServiceImpl implements IOrderService {
+
+    @Resource
+    private RechargeMapper rechargeMapper;
+    @Resource
+    private WaterCardMapper waterCardMapper;
+
 
     String APP_ID = "2016082000293876";
 
@@ -51,6 +67,7 @@ public class OrderServiceImpl implements IOrderService {
             //这里和普通的接口调用不同，使用的是sdkExecute
             AlipayTradeAppPayResponse response = alipayClient.sdkExecute(request);
             System.out.println(response.getBody());//就是orderString 可以直接给客户端请求，无需再做处理。
+            createRecharge(Float.valueOf(money),cardNo,userId);
             return ServerResponse.createBySuccess(response.getBody());
         } catch (AlipayApiException e) {
             e.printStackTrace();
@@ -60,9 +77,46 @@ public class OrderServiceImpl implements IOrderService {
     }
 
 
-
-    @Transactional
     public void createRecharge(Float price, String cardNo, String userId, String orderId) {
+
+        Recharge recharge = new Recharge();
+        WaterCard waterCard = waterCardMapper.selectByCode(cardNo);
+        if(waterCard != null){
+            recharge.setCardId(waterCard.getId());
+            recharge.setBalance(price + waterCard.getBalance());
+            recharge.setId(UUID.randomUUID().toString().replace("-",""));
+            recharge.setPrice(price);
+            recharge.setUserId(userId);
+            recharge.setOrderId(orderId);
+        }
+        int rowCount = rechargeMapper.insert(recharge);
+
+        HashMap hashMap = new HashMap();
+        hashMap.put("cardNo",cardNo);
+        hashMap.put("price",price);
+        waterCardMapper.updateMoney(hashMap);
+
+
+    }
+
+    public void createRecharge(Float price, String cardNo, String userId) {
+
+        Recharge recharge = new Recharge();
+        WaterCard waterCard = waterCardMapper.selectByCode(cardNo);
+        if(waterCard != null){
+            recharge.setCardId(waterCard.getId());
+            recharge.setBalance(price + waterCard.getBalance());
+            recharge.setId(UUID.randomUUID().toString().replace("-",""));
+            recharge.setPrice(price);
+            recharge.setUserId(userId);
+        }
+        int rowCount = rechargeMapper.insert(recharge);
+
+        HashMap hashMap = new HashMap();
+        hashMap.put("cardNo",cardNo);
+        hashMap.put("price",price);
+        waterCardMapper.updateMoney(hashMap);
+
 
     }
 

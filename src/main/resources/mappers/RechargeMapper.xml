@@ -35,7 +35,7 @@
       status)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
       #{price,jdbcType=REAL}, #{totalPrice,jdbcType=REAL}, #{balance,jdbcType=REAL}, 
-      #{ctime,jdbcType=TIMESTAMP}, #{orderId,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR}, 
+      now(), #{orderId,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR},
       #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.test.pojo.Recharge" >
@@ -92,7 +92,7 @@
         #{balance,jdbcType=REAL},
       </if>
       <if test="ctime != null" >
-        #{ctime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="orderId != null" >
         #{orderId,jdbcType=VARCHAR},
@@ -151,4 +151,8 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectAllRecharge" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/> FROM tb_user_recharge ORDER BY ctime DESC
+  </select>
 </mapper>

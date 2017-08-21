@@ -2,6 +2,8 @@ package com.test.dao;
 
 import com.test.pojo.Recharge;
 
+import java.util.List;
+
 public interface RechargeMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface RechargeMapper {
     int updateByPrimaryKeySelective(Recharge record);
 
     int updateByPrimaryKey(Recharge record);
+
+    List<Recharge> selectAllRecharge();
 }

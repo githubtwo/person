@@ -42,7 +42,7 @@
     values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, 
       #{totalPrice,jdbcType=REAL}, #{waterConsumption,jdbcType=REAL}, #{totalConsumption,jdbcType=REAL}, 
       #{unitCost,jdbcType=REAL}, #{balance,jdbcType=REAL}, #{name,jdbcType=VARCHAR}, 
-      #{place,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{cardNo,jdbcType=VARCHAR}, 
+      #{place,jdbcType=VARCHAR},now(), #{cardNo,jdbcType=VARCHAR},
       #{collectorId,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.test.pojo.Purchase" >
@@ -123,7 +123,7 @@
         #{place,jdbcType=VARCHAR},
       </if>
       <if test="ctime != null" >
-        #{ctime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="cardNo != null" >
         #{cardNo,jdbcType=VARCHAR},

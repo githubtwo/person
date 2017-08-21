@@ -38,4 +38,13 @@ public class CardController {
         }
         return iCardService.setDefault(code,user.getId());
     }
+
+    @RequestMapping("getAllCard")
+    public ServerResponse getAllCard(HttpSession session){
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
+        }
+        return iCardService.getAllCard(user.getId());
+    }
 }

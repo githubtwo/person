@@ -12,4 +12,6 @@ public interface ICardService {
     ServerResponse setDefault(String code,String userId);
 
     boolean getCardNo(String cardNo);
+
+    ServerResponse getAllCard(String userId);
 }

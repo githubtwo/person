@@ -3,6 +3,7 @@ package com.test.dao;
 import com.test.pojo.WaterCard;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface WaterCardMapper {
@@ -25,4 +26,6 @@ public interface WaterCardMapper {
     WaterCard selectByCode(String code);
 
     int  selectByCard(String code);
+
+    void updateMoney(HashMap map);
 }

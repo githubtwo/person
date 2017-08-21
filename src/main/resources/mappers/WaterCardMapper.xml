@@ -196,4 +196,10 @@
     SELECT <include refid="Base_Column_List"/> FROM tb_water_card
     WHERE code=#{code}
   </select>
+
+  <update id="updateMoney" parameterType="map">
+    UPDATE tb_water_card
+    set balance=balance + #{price}
+    where code = #{cardNo}
+  </update>
 </mapper>

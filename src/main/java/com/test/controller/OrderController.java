@@ -1,6 +1,5 @@
 package com.test.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.test.common.Const;
@@ -11,7 +10,6 @@ import com.test.service.ICardService;
 import com.test.service.IOrderService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -53,6 +51,7 @@ public class OrderController {
 
     @PostMapping("alipay_callback")
     public void callback(HttpServletRequest request) throws AlipayApiException, UnsupportedEncodingException {
+        System.out.println("fail");
         //获取支付宝POST过来反馈信息
         Map<String,String> params = new HashMap<String,String>();
         Map requestParams = request.getParameterMap();
@@ -73,6 +72,7 @@ public class OrderController {
         boolean flag = AlipaySignature.rsaCheckV1(params, ALIPAY_PUBLIC_KEY, "utf-8","RSA2");
 
         if(!flag){
+            System.out.println("fail");
             String[] parms = URLDecoder.decode(params.get("passback_params"),"UTF-8").split("&");
             String orderId = params.get("trade_no");
             iOrderService.createRecharge(Float.valueOf(parms[0]),parms[1],parms[2],orderId);
