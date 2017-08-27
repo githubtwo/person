@@ -32,7 +32,7 @@ public class UserController {
     @ResponseBody
     @RequestMapping("login")
     public ServerResponse<User> login( HttpSession session, String username, String password){
-        session.setMaxInactiveInterval(1800);
+        session.setMaxInactiveInterval(86400 * 30);
         ServerResponse<User> response = iUserService.login(username,password);
         if(response.isSuccess()){
             session.setAttribute(Const.CURRENT_USER,response.getData());
