@@ -78,6 +78,7 @@ public class QuickSort{
                         else{
                             c[k++]=a[i];
                             if((i+1)==a.length){
+                                j--;
                                 done=true;
                             }else {
                                 break;
@@ -113,7 +114,7 @@ public class QuickSort{
             sort.BubbleSort(a);
             System.out.println(Arrays.toString(a));*/
 
-            int[] c=new int[]{1};
+            int[] c=new int[]{1,3,4};
             int[] d=new int[]{2,5};
             System.out.println(Arrays.toString(sort.addTwo(c,d)));
         }
