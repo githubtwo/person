@@ -22,7 +22,7 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     public ServerResponse<String> register(User user){
-        if(StringUtil.isNotEmpty(user.getUsername())){
+        if(StringUtils.isNotEmpty(user.getUsername())){
             int resulCount = userMapper.checkUsername(user.getUsername());
             if(resulCount > 0){
                 return ServerResponse.createByErrorMessage("该用户已存在");

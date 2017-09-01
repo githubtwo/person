@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -31,7 +32,8 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("login")
-    public ServerResponse<User> login( HttpSession session, String username, String password){
+    public ServerResponse<User> login(HttpSession session, String username, String password){
+
         session.setMaxInactiveInterval(86400 * 30);
         ServerResponse<User> response = iUserService.login(username,password);
         if(response.isSuccess()){

@@ -97,4 +97,6 @@ public class MovieInfo {
                 ", shopping='" + shopping + '\'' +
                 '}';
     }
+
+
 }

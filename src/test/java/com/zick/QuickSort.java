@@ -1,6 +1,8 @@
 package com.zick;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Zick on 2017/8/26.
@@ -84,15 +86,28 @@ public class QuickSort{
                                 break;
                             }
                         }
-
                     }
-
                 }
             }
             return c;
         }
 
-
+    public int lengthOfLongestSubstring1(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            }
+            else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return ans;
+    }
         /**
          * @param args
         牛客网-程序员笔试面试题库，程序员求职备考网站 http://w w w .now coder.com
@@ -101,6 +116,7 @@ public class QuickSort{
             String[] strVoid = new String[]{
                 "11", "66", "22", "0", "55", "22", "0", "32"
             };
+
             QuickSort sort = new QuickSort();
      /*       sort.quickSort(strVoid, 0, strVoid.length - 1);
             *//*for (int i = 0; i < strVoid.length; i++) {
@@ -113,9 +129,14 @@ public class QuickSort{
             System.out.println(Arrays.toString(sort.twoSum(b,6)));
             sort.BubbleSort(a);
             System.out.println(Arrays.toString(a));*/
+            String compare="aab";
+            System.out.println("lengthOfLongestSubstring length   : " + sort.lengthOfLongestSubstring1(compare));
 
             int[] c=new int[]{1,3,4};
             int[] d=new int[]{2,5};
             System.out.println(Arrays.toString(sort.addTwo(c,d)));
+            String s1 = new String("china");
+            String s2 = "china";
+            System.out.println(s1==s2);
         }
 }
