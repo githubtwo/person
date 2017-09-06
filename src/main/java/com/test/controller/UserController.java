@@ -5,8 +5,10 @@ import com.test.common.ServerResponse;
 import com.test.pojo.User;
 import com.test.service.IUserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -17,29 +19,31 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/8/2.
  */
-@Controller
+@RestController
 @RequestMapping("/user/")
 public class UserController {
 
     @Resource
     private IUserService iUserService;
 
-    @ResponseBody
-    @RequestMapping("register")
-    public ServerResponse register(User user){
+    @PostMapping("register")
+    public ServerResponse register(User user,HttpServletResponse response){
+
+        response.setHeader("Access-Control-Allow-Origin", "*");
         return iUserService.register(user);
     }
 
     @ResponseBody
     @RequestMapping("login")
-    public ServerResponse<User> login(HttpSession session, String username, String password){
+    public ServerResponse<User> login(HttpServletResponse response,HttpSession session, String username, String password){
 
+        response.setHeader("Access-Control-Allow-Origin", "*");
         session.setMaxInactiveInterval(86400 * 30);
-        ServerResponse<User> response = iUserService.login(username,password);
-        if(response.isSuccess()){
-            session.setAttribute(Const.CURRENT_USER,response.getData());
+        ServerResponse<User> serverResponse = iUserService.login(username,password);
+        if(serverResponse.isSuccess()){
+            session.setAttribute(Const.CURRENT_USER,serverResponse.getData());
         }
-        return response;
+        return serverResponse;
     }
 
     @ResponseBody

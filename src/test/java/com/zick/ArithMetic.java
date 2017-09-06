@@ -1,9 +1,13 @@
 package com.zick;
 
+import com.google.common.collect.Sets;
+import org.apache.commons.configuration.plist.XMLPropertyListConfiguration;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Administrator on 2017/8/21.
@@ -120,8 +124,24 @@ public class ArithMetic {
                 return m;
         }
     }
+
+    public int removeDuplicates(int[] nums) {
+
+        //Set<Integer> set = Sets.newHashSet();
+
+        Set<Integer> set = new HashSet<>();
+        for(int i= 0 ;i<nums.length;i++){
+            if(!set.contains(nums[i])){
+                set.add(nums[i]);
+            }
+        }
+        return set.size();
+
+    }
+
     public static void main(String[] args) {
         ArithMetic arithMetic = new ArithMetic();
+        int[] abc=new int[]{1,2,3,3,4,4,5,6};
         int x=111;
         System.out.println(x%10);
         System.out.println(arithMetic.reverse(x));
@@ -134,5 +154,16 @@ public class ArithMetic {
         int c = gcd(a, b);
         System.out.println(b%a);
         System.out.println("最小公倍数：" + a * b / c + "\n最大公约数：" + c);
+
+        System.out.println(arithMetic.removeDuplicates(abc));
+    }
+
+    class ListNode{
+        int val;
+        ListNode nextNode;
+        ListNode(int val){
+            this.val=val;
+            this.nextNode=null;
+        }
     }
 }

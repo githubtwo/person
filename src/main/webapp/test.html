@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#login").click(function(){
+            $.ajax({
+                type:"GET",
+                url:"http://47.93.243.239:8080/mmall/user/login?username=" + $("#name").val() 
+                + "&password=" + $("#password").val(),
+                dataType:"json",
+                success:function(data){
+                    if(!data.status){
+                        alert("正确");
+                    }
+                   //console.log(data.data);
+                    $("#result").html(JSON.stringify(data.data) + "<br/>" + data.data.username);
+                },
+                error:function(jqXHR){
+                    alert("发生错误:" + jqXHR.status);
+                }
+            });
+        });
+
+
+        $("#register").click(function(){
+            $.ajax({
+                type:"POST",
+                url:"http://47.93.243.239:8080/mmall/user/register",
+                dataType:"json",
+                data:{
+                    username:$("#registerName").val(),
+                    password:$("#registerPassword").val(),
+                    email:$("#registerEmail").val(),
+                },
+                success:function(data){
+                    $("#registerResult").html(JSON.stringify(data));
+                    $("#msg").text(data.msg );
+                },
+                error:function(jquery){
+                    alert("发生错误：" + jquery.status);
+                }
+            });
+        });
+    });
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSS样式的优势</title>
+<style type="text/css">
+body{
+    line-height: 2em;
+}
+</style>
+
+</head>
+<body>
+   <h1>登录</h1>
+   <label for="name" id="label">姓名：</label>
+   <input type="text" name="name" id="name" placeholder="请输入用户名" ><br/>
+
+   <label for="password">密码：</label>
+   <input type="text" name="name" id="password" placeholder="请输入密码" ><br/>
+
+   <button id="login">登录</button>
+   <p id="result"></p><br/>
+
+   <h1>注册</h1>
+   <label for="registerName">注册姓名</label>
+   <input type="text" name="registerName" id="registerName" placeholder="请输入注册用户名"><br/>
+
+   <label for="registerPassword">注册密码</label>
+   <input type="text" name="registerName" id="registerPassword" placeholder="请输入注册密码"><br/>
+
+   <label for="registerEmail">注册邮箱</label>
+   <input type="text" name="registerName" id="registerEmail" placeholder="请输入注册邮箱"><br/>
+
+   <button id="register">注册</button><br/>
+
+   <p id="registerResult"></p><br/>
+   <p id="msg"></p>
+    
+</body>
+
+<script type="text/javascript">
+    document.getElementById("label").style.color="red";
+</script>
+
+</html>
