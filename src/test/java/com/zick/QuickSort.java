@@ -133,7 +133,7 @@ public class QuickSort{
             System.out.println("lengthOfLongestSubstring length   : " + sort.lengthOfLongestSubstring1(compare));
 
             int[] c=new int[]{1,3,4};
-            int[] d=new int[]{2,5};
+            int[] d=new int[]{2,5,7,10};
             System.out.println(Arrays.toString(sort.addTwo(c,d)));
             String s1 = new String("china");
             String s2 = "china";

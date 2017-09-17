@@ -23,16 +23,17 @@
             })
         }
 
-        for(var i=1;i<10;i++){
+        for(let i=1;i<10;i++){
             var content = '';
-            var j = 0;
+            var j = 1;
             for(var k = 1; k<=i;k++){
-                content += j++ +  " * " + k;
-                console.log()
+                var result = k * i;
+                content += k +  " * " + i + "=" + result + "   ";
+
             }
 
             console.log(content);
-            $(".content").html(content);
+            $(".content").append(content + '</br>');
         }
 
 
