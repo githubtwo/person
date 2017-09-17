@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>123</li>
+    <li>456</li>
+    <li>789</li>
+</ul>
+
+<p class="content"></p>
+
+
+
+<script>
+        for (let i = 0;i < $('li').length;i++){
+            $('li').eq(i).click(function () {
+                alert(i);
+            })
+        }
+
+        for(var i=1;i<10;i++){
+            var content = '';
+            var j = 0;
+            for(var k = 1; k<=i;k++){
+                content += j++ +  " * " + k;
+                console.log()
+            }
+
+            console.log(content);
+            $(".content").html(content);
+        }
+
+
+</script>
+</body>
+</html>
