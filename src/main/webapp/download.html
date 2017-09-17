@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"/>
+<head>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <p id="content"></p>
+    <button onclick="download(123)">jkkjkjlkl</button>
+    <div id="div">
+
+    </div>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type:"GET",
+            url:"/getAllFile",
+            dataType:"json",
+            success:function(data){
+                var a ="" ;
+                for(var i = 0;i<data.data.length;i++){
+                    var c = data.data[i];
+                    var href = "downFile?filename=" + data.data[i];
+                   // a  +=  "<a href='www.baidu.com' " + " onclick=down('" + c.toString() + "')>"+ data.data[i]+"</a><br/>";
+                    a  +=  "<a href='" + href + "'>"+ data.data[i]+"</a><br/>";
+                }
+                $("#div").html(a);
+                $("#content").text(data.data.size);
+            },
+            error:function(jquery){
+                alert("发生错误：" + jquery.status);
+            }
+        });
+    });
+
+    function down(a) {
+
+       /* $(function(){
+            $.get('/downFile?filename='+a,function(data){
+                console.log(data);
+               alert(data.msg);
+
+            });
+        });*/
+        //alert('http://172.16.0.118:8080/downFile?filename='+a);
+  /*         $(document).ready(function () {
+               $.ajax({
+                   async:true,
+                   type:"GET",
+                   url:"http://172.16.0.118:8080/downFile",
+                   dataType:"json",
+                   data:{
+                       filename:a,
+                   },
+                   success:function(data){
+                       $("#content").text(data.msg);
+                   },
+                   error:function(jquery){
+                       alert("发生错误：" + jquery.status);
+                   }
+               });
+           });*/
+    }
+</script>
+
+
+
+</html>
