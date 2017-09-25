@@ -20,8 +20,9 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <servlet-mapping >
-    <servlet-name >default</servlet-name>
+  <!--如果对某个请求没有找到匹配的Servlet，那么将使用Web应用程序的默认Servlet来处理-->
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping >
 
