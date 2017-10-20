@@ -56,7 +56,7 @@
 -->
 
 
-  <!--过滤器的配置，转码配置-->
+  <!--过滤器的配置，解决乱码问题-->
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class><!--不用另外去写ut8Encoding-->

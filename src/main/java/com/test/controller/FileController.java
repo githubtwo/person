@@ -29,23 +29,23 @@ public class FileController {
     private IFileService iFileService;
 
     @PostMapping("upload")
-    public ServerResponse upload(HttpSession session, MultipartFile file, HttpServletRequest request){
+    public ServerResponse upload(HttpSession session, MultipartFile[] file, HttpServletRequest request){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
 //        if(user == null){
 //            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"用户未登录，请登录管理员");
 //        }
 
         //if(iUserService.checkAdminRole(user).isSuccess()){
-        String path = request.getSession().getServletContext().getRealPath("upload");
-        System.out.println(path);
+  /*      String path = request.getSession().getServletContext().getRealPath("upload");
+        System.out.println(path + "    " + file.getSize());
         // String uploadUrl = path.substring(0,path.length()-5) + "upload/";
         String targetFileName = iFileService.upload(file,path);
         String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
         Map fileMap = Maps.newHashMap();
         fileMap.put("uri",targetFileName);
         fileMap.put("url",url);
-
-        return ServerResponse.createBySuccess(fileMap);
+*/
+        return null;//ServerResponse.createBySuccess(fileMap);
 //        }else{
 //            return ServerResponse.createByErrorMessage("无权限操作");
 //        }
